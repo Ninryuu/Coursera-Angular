@@ -17,6 +17,7 @@ $accent-color:         #FFC107;
 $primary-text-color:   #212121;
 $secondary-text-color: #757575;
 $divider-color:        #BDBDBD;
+$background-moredark: #4527A0;
 
 body { 
   padding: 0; 
@@ -45,4 +46,8 @@ body {
 
 .flex-spacer {
   flex: 1 1 auto;
+}
+
+.active {
+    background: $background-moredark;
 }
