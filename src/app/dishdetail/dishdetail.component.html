@@ -1,17 +1,6 @@
-<div class="container"
-    fxLayout="row wrap"
-    fxLayout.sm="column"
-    fxLayout.xs="column"
-    fxLayoutAlign.gt-md="space-around center"
-    fxLayoutGap="10px" 
-    fxLayoutGap.xs="0">
+<div class="container" fxLayout="row wrap" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
+  fxLayoutGap="10px" fxLayoutGap.xs="0">
 
-  <div fxFlex="100">
-    <div>
-      <h3>{{dish.name | uppercase}}</h3>
-      <hr>
-    </div>
-  </div>
   <div fxFlex="40">
     <mat-card *ngIf="dish">
       <mat-card-header>
@@ -34,19 +23,22 @@
 
   <div fxFlex="40">
     <mat-list *ngIf="dish">
-        <h2>Comments</h2>
-        <mat-list-item *ngFor="let comment of dish.comments">
-            <p matLine>
-                <span> {{comment.comment}} </span>
-              </p>
-          <p matLine>
-              <span> {{comment.rating}} Stars </span>
-            </p>
-          <p matLine>
-            <span>-- {{comment.author}} {{comment.date | date}}</span>
-          </p>
-        </mat-list-item>
-      </mat-list>
+      <h2>Comments</h2>
+      <mat-list-item *ngFor="let comment of dish.comments">
+        <p matLine>
+          <span> {{comment.comment}} </span>
+        </p>
+        <p matLine>
+          <span> {{comment.rating}} Stars </span>
+        </p>
+        <p matLine>
+          <span>-- {{comment.author}} {{comment.date | date}}</span>
+        </p>
+      </mat-list-item>
+    </mat-list>
   </div>
-
+  <div fxFlex [hidden]="dish">
+      <mat-spinner></mat-spinner>
+      <h4>Loading . . . Please Wait</h4>
+  </div>
 </div>
