@@ -42,10 +42,7 @@
       </mat-list-item>
     </mat-list>
   </div>
-  <div fxFlex [hidden]="dish">
-    <mat-spinner></mat-spinner>
-    <h4>Loading . . . Please Wait</h4>
-  </div>
+  
   <div fxFlex class="form-size">
       <mat-list *ngIf="commentForm.valid">
           <mat-list-item>
@@ -78,5 +75,13 @@
       </p>
       <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
     </form>
+  </div>
+  <div fxFlex [hidden]="dish||errMess">
+    <mat-spinner></mat-spinner>
+    <h4>Loading . . . Please Wait</h4>
+  </div>
+  <div fxFlex *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
   </div>
 </div>
