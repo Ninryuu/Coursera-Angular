@@ -52,3 +52,15 @@ export function expand() {
         ])
     ]);
 }
+export function hide() {
+    return trigger('hide', [
+        state('shown', style({
+            transform: 'scale(1.0)',
+            display: 'block'
+        })),
+        state('hidden', style({
+            transform: 'scale(0.5)',
+            display: 'none'
+        }))
+    ]);
+}
